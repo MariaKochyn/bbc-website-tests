@@ -1,0 +1,10 @@
+{
+    "baseUrl" : "https://www.bbc.com/",
+    "viewportWidth" : 1920,
+	"viewportHeight": 1080,
+	"defaultCommandTimeout": 25000,
+	"responseTimeout" : 20000,
+	"taskTimeout": 50000,
+    "pageLoadTimeout": 40000,
+	"chromeWebSecurity": false
+}
