@@ -9,7 +9,6 @@ export function goToNewsPage() {
     News.newsBtn().should('be.visible').contains('News').click()
     cy.url().should('eq', 'https://www.bbc.com/news')
     News.headlineArticle().should('be.visible')
-
 }
 
 
@@ -42,6 +41,8 @@ export function articleCategory() {
             expect(articleRegionLink.text()).to.equal(foundArticleRegion.text())
         })
     })
+
+
 
 
 }

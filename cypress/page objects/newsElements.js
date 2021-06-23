@@ -56,4 +56,5 @@ export default class news {
        return cy.xpath(`//span[normalize-space()='Europe']`)
    }
 
+  
 }

@@ -11,13 +11,18 @@ describe('Go to News page', () => {
         headlineValue()
     });
 
-    // probably will be failed because of article titles
+    // probably will be failed because of articles titles
     it('Check secondary titles', () => {
         secondaryValues(nws.secondaryArticles(), nws.articlesTitles())
     });
 
-    it.only('First article in a category', () => {
+    it('First article in a category', () => {
         articleCategory()
     })
+
+    
+    it.only('', () => {
+        
+    });
 
 })
