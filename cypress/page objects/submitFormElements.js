@@ -60,5 +60,13 @@ export default class form {
     invalidEmailError() {
         return cy.get('.input-error-message')
     }
+
+    cantBeBlankError() {
+        return cy.xpath(`//div[@class='input-error-message']`)
+    }
+
+    mustBeAcceptedError() {
+        return cy.xpath(`//div[@class='input-error-message']`)
+    }
  
 }
