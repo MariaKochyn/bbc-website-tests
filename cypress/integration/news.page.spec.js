@@ -1,6 +1,6 @@
 import news from "../page objects/news.page";
 import { goToNewsPage, headlineValue, example, secondaryValues, secondTitleText, articleCategory, visitNewsPage, openMainPage, } from "../models/news.methods";
-const nws = new news;
+const News = new news;
 
 describe('Testing articles on the News page', () => {
     before(() => {
@@ -14,7 +14,7 @@ describe('Testing articles on the News page', () => {
 
     // probably will be failed because of articles titles
     it('Check secondary titles', () => {
-        secondaryValues(nws.secondaryArticles(), nws.articlesTitles())
+        secondaryValues(News.secondaryArticles(), News.articlesTitles())
     });
 
     it('First article in a category', () => {

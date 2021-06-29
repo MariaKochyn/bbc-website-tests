@@ -1,4 +1,3 @@
-import main from "../page objects/main.page";
 import { cityInWeatherPage, date } from "../models/main.page.methods"; 
 import { openMainPage } from "../models/news.methods";
 
@@ -12,7 +11,7 @@ describe('Tests for the main page', () => {
     });
 
 
-    it.only('Checking city in the Weather page', () => {
+    it('Checking city in the Weather page', () => {
         cityInWeatherPage()
     });
 })
