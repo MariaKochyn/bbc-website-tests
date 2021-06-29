@@ -1,10 +1,10 @@
 import news from "../page objects/news.page";
-import { goToNewsPage, headlineValue, example, secondaryValues, secondTitleText, articleCategory, visitNewsPage, } from "../models/news.methods";
+import { goToNewsPage, headlineValue, example, secondaryValues, secondTitleText, articleCategory, visitNewsPage, openMainPage, } from "../models/news.methods";
 const nws = new news;
 
 describe('Testing articles on the News page', () => {
     before(() => {
-        visitNewsPage()
+        openMainPage()
     })
 
     it('Check headline name', () => {

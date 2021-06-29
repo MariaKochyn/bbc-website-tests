@@ -1,12 +1,13 @@
 import news from "../page objects/news.page";
 import form from "../page objects/coronavirusForm.page";
-import { goToNewsPage } from "../models/news.methods";
+import { goToNewsPage, openMainPage } from "../models/news.methods";
 import { emptyStoryField, goToForm, invalidEmail, submitForm, uncheckedCheckbox } from "../models/coronavirusForm.methods";
 const nws = new news;
 const frm = new form;
 
 describe('Coronavirus form tests', () => {
     before(() => {
+        openMainPage()
         goToNewsPage()
     })
 

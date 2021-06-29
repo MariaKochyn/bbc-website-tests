@@ -3,7 +3,7 @@ import news from "../page objects/news.page";
 const News = new news();
 const envVariables = Cypress.env();
 
-export function visitNewsPage() {
+export function openMainPage() {
     cy.visit(envVariables.dev.url)
 }
 
