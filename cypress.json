@@ -1,5 +1,16 @@
 {
     "baseUrl" : "https://www.bbc.com/",
+	"reporter": "cypress-multi-reporters",
+	"reporterOptions": {
+		"reporterEnabled": "mochawesome",
+		"mochawesomeReporterOptions": {
+			"reportDir": "cypress/reports/mocha",
+			"quite": true,
+			"overwrite": false,
+			"html": true,
+			"json": true
+		}
+	},
     "viewportWidth" : 1920,
 	"viewportHeight": 1080,
 	"defaultCommandTimeout": 25000,
@@ -7,4 +18,7 @@
 	"taskTimeout": 50000,
     "pageLoadTimeout": 40000,
 	"chromeWebSecurity": false
+
 }
+
+

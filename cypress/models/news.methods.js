@@ -1,11 +1,13 @@
-import news from "../page objects/newsElements";
+import news from "../page objects/news.page";
 
 const News = new news();
+const envVariables = Cypress.env();
 
+export function visitNewsPage() {
+    cy.visit(envVariables.dev.url)
+}
 
 export function goToNewsPage() {
-    cy.visit('https://www.bbc.com/')
-    cy.url().should('include', 'bbc.com')
     News.newsBtn().should('be.visible').contains('News').click()
     cy.url().should('eq', 'https://www.bbc.com/news')
     News.headlineArticle().should('be.visible')
@@ -13,12 +15,12 @@ export function goToNewsPage() {
 
 
 export function headlineValue() {
-    News.headingTitle().should('have.text', 'Hong Kong pro-democracy paper to shut from tonight')
+    News.headingTitle().should('have.text', 'Rescuers listen for signs of life in Miami rubble')
 }
 
 
 export function example(news, title) {
-    cy.xpath(news).should('exist').and('contain', title);
+    cy.get(news).should('exist').and('contain', title);
 }
 export function secondaryValues(news, title) {
     for (let i = 0; i < news.length || i < title.length; i++) {

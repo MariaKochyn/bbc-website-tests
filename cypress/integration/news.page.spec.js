@@ -1,13 +1,14 @@
-import news from "../page objects/newsElements";
-import { goToNewsPage, headlineValue, example, secondaryValues, secondTitleText, articleCategory, } from "../models/news";
+import news from "../page objects/news.page";
+import { goToNewsPage, headlineValue, example, secondaryValues, secondTitleText, articleCategory, visitNewsPage, } from "../models/news.methods";
 const nws = new news;
 
-describe('Go to News page', () => {
+describe('Testing articles on the News page', () => {
     before(() => {
-        goToNewsPage()
+        visitNewsPage()
     })
 
     it('Check headline name', () => {
+        goToNewsPage()
         headlineValue()
     });
 
@@ -21,8 +22,6 @@ describe('Go to News page', () => {
     })
 
     
-    it.only('', () => {
-        
-    });
+  
 
 })

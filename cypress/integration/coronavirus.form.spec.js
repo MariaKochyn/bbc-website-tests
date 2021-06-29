@@ -1,11 +1,11 @@
-import news from "../page objects/newsElements";
-import form from "../page objects/submitFormElements";
-import { goToNewsPage } from "../models/news";
-import { emptyStoryField, goToForm, invalidEmail, submitForm, uncheckedCheckbox } from "../models/submitForm";
+import news from "../page objects/news.page";
+import form from "../page objects/coronavirusForm.page";
+import { goToNewsPage } from "../models/news.methods";
+import { emptyStoryField, goToForm, invalidEmail, submitForm, uncheckedCheckbox } from "../models/coronavirusForm.methods";
 const nws = new news;
 const frm = new form;
 
-describe('Go to News page', () => {
+describe('Coronavirus form tests', () => {
     before(() => {
         goToNewsPage()
     })

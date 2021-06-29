@@ -1,4 +1,4 @@
-import form from "../page objects/submitFormElements";
+import form from "../page objects/coronavirusForm.page";
 
 const Form = new form(); 
 
@@ -32,7 +32,7 @@ export function emptyStoryField() {
     Form.acceptTermsCheckbox().check()
     Form.submitButton().click()
     cy.wait(5000)
-    Form.cantBeBlankError().should('exist')
+    Form.messageCantBeBlankError().should('exist')
     cy.url().should('contain', 'news/10725415')
     Form.submitButton().should('be.enabled')
 }
