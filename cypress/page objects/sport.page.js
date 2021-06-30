@@ -52,6 +52,18 @@ export default class sport {
         return cy.get('.sp-c-fixture.sp-c-fixture--live-session-header.gel-wrap')
     }
 
+    firstScoresOnMatchPage() {
+        return cy.get('.sp-c-fixture__number.sp-c-fixture__number--home.sp-c-fixture__number--ft')
+    }
+
+    secondScoreOnMatchPage() {
+        return cy.get('.sp-c-fixture__number.sp-c-fixture__number--away.sp-c-fixture__number--ft')
+    }
+
+    aprilInCalendar() {
+        return cy.get('.sp-c-date-picker-timeline__item-inner.false')
+    }
+    
 
 }
 
