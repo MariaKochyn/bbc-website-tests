@@ -1,7 +1,7 @@
 export default class sport {
 
     sportBtn() {
-        return cy.get('.orb-nav-sport').eq(0)
+        return cy.get('.orb-nav-sport')
     }
 
     sportNavigationPanel() {
@@ -9,7 +9,7 @@ export default class sport {
     }
 
     footballBtn() {
-        return cy.get('[data-stat-title="Football"]').eq(0)
+        return cy.get('[data-stat-title="Football"]')
     }
 
     footballNavigationPanel() {
@@ -17,7 +17,7 @@ export default class sport {
     }
 
     scoresAndFixturesBtn() {
-        return cy.get('.sp-c-sport-navigation__link.sp-c-sport-navigation__link--secondary.qa-secondary-item.sp-nav-click-stat').eq(0)
+        return cy.get('.sp-c-sport-navigation__link.sp-c-sport-navigation__link--secondary.qa-secondary-item.sp-nav-click-stat')
     }
 
     teamOrCompetitionSearchField() {
@@ -29,23 +29,23 @@ export default class sport {
     }
 
     searchChampionshipItem() {
-        return cy.get('.sp-c-search__result.gs-o-list-ui__item.gs-o-list-ui__item--flush').eq(0)
+        return cy.get('.sp-c-search__result.gs-o-list-ui__item.gs-o-list-ui__item--flush')
     }
 
     mayInCalendar() {
-        return cy.get('#sp-timeline-past-dates>.sp-c-date-picker-timeline__item:nth-child(12)')
+        return cy.get('.gel-long-primer-bold.gs-u-display-block')
     }
 
     firstTeamScoreValue() {
-        return cy.get('.sp-c-fixture__number--home.sp-c-fixture__number--ft').eq(0)
+        return cy.get('.sp-c-fixture__number--home.sp-c-fixture__number--ft')
     }
 
     secondTeamScoreValue() {
-        return cy.get('.sp-c-fixture__number.sp-c-fixture__number--away.sp-c-fixture__number--ft').eq(0)
+        return cy.get('.sp-c-fixture__number.sp-c-fixture__number--away.sp-c-fixture__number--ft')
     }
 
     matchPage() {
-        return cy.get('.sp-c-fixture__block-link').eq(0)
+        return cy.get('.sp-c-fixture__wrapper')
     }
 
     matchHeader() {
