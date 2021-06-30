@@ -1,6 +1,6 @@
 import { goToForm } from "../models/coronavirusForm.methods";
 import { openMainPage } from "../models/news.methods";
-import { goToSportPage, scores } from "../models/sport.page.methods";
+import { goToSportPage, scores, scoresCompare, searchCompetitionOrTeam } from "../models/sport.page.methods";
 
 describe('Testing football scores', () => {
     before(() => {
@@ -10,7 +10,8 @@ describe('Testing football scores', () => {
 
     it('qwerty', () => {
         goToSportPage()
-        scores()
+        searchCompetitionOrTeam()
+        scoresCompare()
     });
 
 })

@@ -28,7 +28,30 @@ export default class sport {
         return cy.get('#page')
     }
 
-    ScottishChampionshipItem() {
-        return cy.get('.sp-c-search__result-item')
+    searchChampionshipItem() {
+        return cy.get('.sp-c-search__result.gs-o-list-ui__item.gs-o-list-ui__item--flush').eq(0)
     }
+
+    mayInCalendar() {
+        return cy.get('#sp-timeline-past-dates>.sp-c-date-picker-timeline__item:nth-child(12)')
+    }
+
+    firstTeamScoreValue() {
+        return cy.get('.sp-c-fixture__number--home.sp-c-fixture__number--ft').eq(0)
+    }
+
+    secondTeamScoreValue() {
+        return cy.get('.sp-c-fixture__number.sp-c-fixture__number--away.sp-c-fixture__number--ft').eq(0)
+    }
+
+    matchPage() {
+        return cy.get('.sp-c-fixture__block-link').eq(0)
+    }
+
+    matchHeader() {
+        return cy.get('.sp-c-fixture.sp-c-fixture--live-session-header.gel-wrap')
+    }
+
+
 }
+
