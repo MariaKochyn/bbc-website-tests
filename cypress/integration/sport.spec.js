@@ -6,7 +6,7 @@ describe('Testing football scores', () => {
         openMainPage()
     })
 
-    it.only('Verify scores in football Scottish Championship', () => {
+    it('Verify scores in football Scottish Championship', () => {
         goToSportPage()
         searchCompetitionOrTeam()
         scoresCompare()

@@ -21,10 +21,6 @@ export function goToSportPage() {
 }
 
 
-// export function ChampionshipName() {
-//     return 'Scottish Championship'
-// }
-
 export function searchCompetitionOrTeam() {
     sport.teamOrCompetitionSearchField().should('be.visible').clear().type(envVariables.scottish_championship)
     sport.searchChampionshipItem().eq(0).should('be.visible').click()
@@ -46,15 +42,15 @@ export function scoresCompare() {
     sport.secondScoreOnMatchPage().eq(0).should('have.text', scores[1])
 }
 
-export function ChampionshipName2() {
-    return 'Europa League'
-} 
+// export function ChampionshipName2() {
+//     return 'Europa League'
+// } 
 
 export function searchCompetitionOrTeam2() {
-    sport.teamOrCompetitionSearchField().should('be.visible').clear().type(ChampionshipName2())
+    sport.teamOrCompetitionSearchField().should('be.visible').clear().type(envVariables.Europa_League)
     sport.searchChampionshipItem().eq(0).should('be.visible').click()
     cy.url().should('contain', '/scores-fixtures')
-    sport.competitionOrTeamTitle().should('be.visible').contains(ChampionshipName2() + ' Scores & Fixtures')
+    sport.competitionOrTeamTitle().should('be.visible').contains(envVariables.Europa_League + ' Scores & Fixtures')
     sport.monthInCalendar().contains('APR').should('be.visible').click()
 }
 
@@ -72,15 +68,15 @@ export function scoresCompare2() {
 
 
 
-export function ChampionshipName3() {
-    return 'Liverpool'
-} 
+// export function ChampionshipName3() {
+//     return 'Liverpool'
+// } 
 
 export function searchCompetitionOrTeam3() {
-    sport.teamOrCompetitionSearchField().should('be.visible').clear().type(ChampionshipName3())
+    sport.teamOrCompetitionSearchField().should('be.visible').clear().type(envVariables.Liverpool)
     sport.searchChampionshipItem().eq(0).should('be.visible').click()
     cy.url().should('contain', '/scores-fixtures')
-    sport.competitionOrTeamTitle().should('be.visible').contains(ChampionshipName3() + ' Scores & Fixtures')
+    sport.competitionOrTeamTitle().should('be.visible').contains(envVariables.Liverpool + ' Scores & Fixtures')
     sport.monthInCalendar().contains('MAR').should('be.visible').click()
 }
 
@@ -98,15 +94,15 @@ export function scoresCompare3() {
 
 
 
-export function ChampionshipName4() {
-    return 'Levante'
-} 
+// export function ChampionshipName4() {
+//     return 'Levante'
+// } 
 
 export function searchCompetitionOrTeam4() {
-    sport.teamOrCompetitionSearchField().should('be.visible').clear().type(ChampionshipName4())
+    sport.teamOrCompetitionSearchField().should('be.visible').clear().type(envVariables.Levante)
     sport.searchChampionshipItem().eq(0).should('be.visible').click()
     cy.url().should('contain', '/scores-fixtures')
-    sport.competitionOrTeamTitle().should('be.visible').contains(ChampionshipName4() + ' Scores & Fixtures')
+    sport.competitionOrTeamTitle().should('be.visible').contains(envVariables.Levante + ' Scores & Fixtures')
     sport.monthInCalendar().contains('FEB').should('be.visible').click()
 }
 
@@ -124,15 +120,15 @@ export function scoresCompare4() {
 
 
 
-export function ChampionshipName5() {
-    return 'French Coupe de France'
-} 
+// export function ChampionshipName5() {
+//     return 'French Coupe de France'
+// } 
 
 export function searchCompetitionOrTeam5() {
-    sport.teamOrCompetitionSearchField().should('be.visible').clear().type(ChampionshipName5())
+    sport.teamOrCompetitionSearchField().should('be.visible').clear().type(envVariables.French_Coupe_de_France)
     sport.searchChampionshipItem().eq(0).should('be.visible').click()
     cy.url().should('contain', '/scores-fixtures')
-    sport.competitionOrTeamTitle().should('be.visible').contains(ChampionshipName5() + ' Scores & Fixtures')
+    sport.competitionOrTeamTitle().should('be.visible').contains(envVariables.French_Coupe_de_France + ' Scores & Fixtures')
     sport.monthInCalendar().contains('JAN').should('be.visible').click()
 }
 
