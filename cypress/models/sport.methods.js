@@ -1,6 +1,13 @@
 import SportPage from "../page objects/sport.page";
 const sport = new SportPage();
-let envVariables = Cypress.env('enviroment')
+let envVariables = Cypress.env(Cypress.env('environment'));
+
+
+Cypress.on('uncaught:exception', (err, runnable) => {
+    if (err.message.includes('n.isMounted')) {
+      return false
+    }
+})
 
 export function goToSportPage() {
     sport.sportBtn().eq(0).should('be.visible').contains('Sport').click()
@@ -19,10 +26,10 @@ export function goToSportPage() {
 // }
 
 export function searchCompetitionOrTeam() {
-    sport.teamOrCompetitionSearchField().should('be.visible').clear().type(envVariables.ScottishChampionship)
+    sport.teamOrCompetitionSearchField().should('be.visible').clear().type(envVariables.scottish_championship)
     sport.searchChampionshipItem().eq(0).should('be.visible').click()
     cy.url().should('contain', '/scores-fixtures')
-    sport.competitionOrTeamTitle().should('be.visible').contains(envVariables.ScottishChampionship + ' Scores & Fixtures')
+    sport.competitionOrTeamTitle().should('be.visible').contains(envVariables.scottish_championship + ' Scores & Fixtures')
     sport.monthInCalendar().contains('MAY').should('be.visible').click()
 
 }
@@ -140,3 +147,4 @@ export function scoresCompare5() {
     sport.firstScoresOnMatchPage().eq(0).should('have.text', scores5[0])
     sport.secondScoreOnMatchPage().eq(0).should('have.text', scores5[1])
 }
+
