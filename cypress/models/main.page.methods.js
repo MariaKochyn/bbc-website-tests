@@ -1,8 +1,5 @@
 import main from "../page objects/main.page"
-import moment from "moment";
-
 const Main = new main();
-
 
 export function date() {
     let date = new Date();
@@ -10,7 +7,6 @@ export function date() {
     Main.dateValue().should('contain', date.getDate())
     Main.dateValue().should('contain', date.toLocaleDateString('en-us', {  month: 'long' }))
 }
-
 
 export function city() {
     return `L'viv`
@@ -23,7 +19,5 @@ export function cityInWeatherPage() {
     Main.searchForLocationBtn().should('be.visible').click()
     Main.weatherContainer().should('be.visible')
     Main.cityOnWeatherPage().should('be.visible').and('have.text', city()+' - Weather warnings issued')
-
 }
-
 
