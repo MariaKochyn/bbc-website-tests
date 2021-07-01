@@ -21,7 +21,4 @@ describe('Testing articles on the News page', () => {
         articleCategory()
     })
 
-    
-  
-
 })

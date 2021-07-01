@@ -1,63 +1,64 @@
-import form from "../page objects/coronavirusForm.page";
+import FormPage from "../page objects/coronavirusForm.page";
 
-const Form = new form(); 
+
+const form = new FormPage(); 
 
 export function goToForm() {
-    Form.newsNavigationPanel().should('be.visible')
-    Form.coronavirusButton().invoke('attr', 'href').then(href => {cy.visit(href);})
+    form.newsNavigationPanel().should('be.visible')
+    form.coronavirusButton().invoke('attr', 'href').then(href => {cy.visit(href);})
     cy.url().should('contain', '/news/coronavirus')
-    Form.coronavirusNavigationPanel().should('be.visible')
-    Form.yourStoriesButton().invoke('attr', 'href').then(href => {cy.visit(href);})
+    form.coronavirusNavigationPanel().should('be.visible')
+    form.yourStoriesButton().invoke('attr', 'href').then(href => {cy.visit(href);})
     cy.url().should('contain', '/news/have_your_say')
-    Form.getInTouchSection().should('be.visible')
-    Form.howToShareBlock().should('exist').click()
+    form.getInTouchSection().should('be.visible')
+    form.howToShareBlock().should('exist').click()
     cy.url().should('contain', 'news/10725415')
-    Form.formWithInpust().should('be.visible')
+    form.formWithInpust().should('be.visible')
 }
 
 export function submitForm() {
-    Form.formWithInpust().find('.text-input--long').click().type('kbfd;vijbearijvbawierbvaiejbrva;ejbvr;aojebrv;ja')
-    Form.nameInputField().clear()
-    Form.numberInputField().clear().type('0672536453')
-    Form.locationInputField().clear().type('dfdfgdfgdf')
-    Form.acceptTermsCheckbox().check()
-    Form.submitButton().click()
+    form.formWithInpust().find('.text-input--long').click().type('kbfd;vijbearijvbawierbvaiejbrva;ejbvr;aojebrv;ja')
+    form.nameInputField().clear()
+    form.numberInputField().clear().type('0672536453')
+    form.locationInputField().clear().type('dfdfgdfgdf')
+    form.acceptTermsCheckbox().check()
+    form.submitButton().click()
     cy.url().should('contain', 'news/10725415')
-    Form.submitButton().should('be.enabled')
+    form.submitButton().should('be.enabled')
 }
 
 export function emptyStoryField() {
-    Form.formWithInpust().find('.text-input--long').should('be.visible').clear()
-    Form.nameInputField().clear().type('name')
-    Form.acceptTermsCheckbox().check()
-    Form.submitButton().click()
+    form.formWithInpust().find('.text-input--long').should('be.visible').clear()
+    form.nameInputField().clear().type('name')
+    form.acceptTermsCheckbox().check()
+    form.submitButton().click()
     cy.wait(5000)
-    Form.messageCantBeBlankError().should('exist')
+    form.messageCantBeBlankError().should('exist')
     cy.url().should('contain', 'news/10725415')
-    Form.submitButton().should('be.enabled')
+    form.submitButton().should('be.enabled')
 }
 
 export function invalidEmail() {
     cy.reload()
-    Form.formWithInpust().find('.text-input--long').click().type('kbfd;vijbear')
-    Form.nameInputField().clear().type('name')
-    Form.emailInputField().clear().type('123')
-    Form.acceptTermsCheckbox().check()
-    Form.submitButton().click()
+    form.formWithInpust().find('.text-input--long').click().type('kbfd;vijbear')
+    form.nameInputField().clear().type('name')
+    form.emailInputField().clear().type('123')
+    form.acceptTermsCheckbox().check()
+    form.submitButton().click()
     cy.wait(5000)
-    Form.invalidEmailError().should('exist')
+    form.invalidEmailError().should('exist')
     cy.url().should('contain', 'news/10725415')
-    Form.submitButton().should('be.enabled')
+    form.submitButton().should('be.enabled')
 }
 
 export function uncheckedCheckbox() {
     cy.reload()
-    Form.formWithInpust().find('.text-input--long').click().clear().type('kbfd;vijbear')
-    Form.nameInputField().clear().type('name')
-    Form.submitButton().click()
+    form.formWithInpust().find('.text-input--long').click().clear().type('kbfd;vijbear')
+    form.nameInputField().clear().type('name')
+    form.submitButton().click()
     cy.wait(5000)
-    Form.mustBeAcceptedError().should('exist')
+    form.mustBeAcceptedError().should('exist')
     cy.url().should('contain', 'news/10725415')
-    Form.submitButton().should('be.enabled')
+    form.submitButton().should('be.enabled')
 }
 

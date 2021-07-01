@@ -1,4 +1,4 @@
-export default class form {
+export default class FormPage {
 
     newsNavigationPanel() {
         return cy.get('.gs-o-list-ui--top-no-border.nw-c-nav__wide-sections')

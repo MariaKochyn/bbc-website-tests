@@ -1,4 +1,4 @@
-export default class main {
+export default class MainPage {
     
     dateValue() {
         return cy.xpath(`//section[@class='module module--header']//h2[@class='module__title']`)

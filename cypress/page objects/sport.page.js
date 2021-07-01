@@ -1,4 +1,4 @@
-export default class sport {
+export default class SportPage {
 
     sportBtn() {
         return cy.get('.orb-nav-sport')
@@ -32,10 +32,6 @@ export default class sport {
         return cy.get('.sp-c-search__result.gs-o-list-ui__item.gs-o-list-ui__item--flush')
     }
 
-    mayInCalendar() {
-        return cy.get('.gel-long-primer-bold.gs-u-display-block')
-    }
-
     firstTeamScoreValue() {
         return cy.get('.sp-c-fixture__number--home.sp-c-fixture__number--ft')
     }
@@ -60,10 +56,11 @@ export default class sport {
         return cy.get('.sp-c-fixture__number.sp-c-fixture__number--away.sp-c-fixture__number--ft')
     }
 
-    aprilInCalendar() {
+    monthInCalendar() {
         return cy.get('.sp-c-date-picker-timeline__item-inner.false')
     }
-    
+
+   
 
 }
 

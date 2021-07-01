@@ -1,6 +1,6 @@
-import news from "../page objects/news.page";
+import NewsPage from "../page objects/news.page";
 
-const News = new news();
+const news = new NewsPage();
 const envVariables = Cypress.env();
 
 export function openMainPage() {
@@ -8,14 +8,14 @@ export function openMainPage() {
 }
 
 export function goToNewsPage() {
-    News.newsBtn().should('be.visible').contains('News').click()
+    news.newsBtn().should('be.visible').contains('News').click()
     cy.url().should('eq', 'https://www.bbc.com/news')
-    News.headlineArticle().should('be.visible')
+    news.headlineArticle().should('be.visible')
 }
 
 
 export function headlineValue() {
-    News.headingTitle().should('have.text', 'Rescuers listen for signs of life in Miami rubble')
+    news.headingTitle().should('have.text', 'Rescuers listen for signs of life in Miami rubble')
 }
 
 
@@ -30,16 +30,16 @@ export function secondaryValues(news, title) {
 
 
 export function articleCategory() {
-    News.articleRegionLink().then((articleRegionLink) => {
-         News.headingTitle().then(($temp) => {
+    news.articleRegionLink().then((articleRegionLink) => {
+         news.headingTitle().then(($temp) => {
               const txt = $temp.text()
-         News.searchField().type(`${txt}`+'{enter}')
+         news.searchField().type(`${txt}`+'{enter}')
 })
     cy.url().should('include', 'search?q=')
-    News.foundArticle().should('be.visible')
-    News.foundArticleCategory().should('be.visible').and('have.text', 'News')
+    news.foundArticle().should('be.visible')
+    news.foundArticleCategory().should('be.visible').and('have.text', 'News')
 
-        News.foundArticleRegion().then((foundArticleRegion) => {
+        news.foundArticleRegion().then((foundArticleRegion) => {
             expect(articleRegionLink.text()).to.equal(foundArticleRegion.text())
         })
     })

@@ -1,4 +1,4 @@
-export default class news {
+export default class NewsPage {
 
     newsBtn() {
         return cy.get(`.orb-nav-newsdotcom`)
